@@ -26,11 +26,22 @@ namespace DAM_Leccion_KBMC
 
         public void Ejecutar()
         {
-            PersonaModel personaModel = new PersonaModel();
+            PersonaModel personaModel = new PersonaModel()
+            {
+                Nombre = "Hola aqui estoy",
+            };
+            BindingContext = personaModel.Nombre;
+            //txtNombre.Text = personaModel.Nombre;
 
-            personaModel.Nombre = "Hola aqui estoy";
+            //Binding personaBinding = new Binding();
 
-            txtNombre.Text = personaModel.Nombre;
+            //personaBinding.Source = personaModel;//Origen
+            //personaBinding.Path = "Nombre";//Ruta
+            //txtNombre.SetBinding(Entry.TextProperty, personaBinding);//Destino Final
+
+
+
+
         }
 
         private void btnAceptar_Clicked(object sender, EventArgs e)
