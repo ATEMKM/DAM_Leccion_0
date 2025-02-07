@@ -1,4 +1,5 @@
-﻿namespace DAM_Leccion_KBMC
+﻿
+namespace DAM_Leccion_KBMC
 {
     public partial class App : Application
     {
