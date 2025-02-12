@@ -32,12 +32,7 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+            
             <Entry
                 x:Name="txtNombre"
                 Text="{Binding Nombre}"
@@ -49,8 +44,27 @@
                     Clicked="btnAceptar_Clicked"
                     HorizontalOptions="CenterAndExpand"
                     Text="Aceptar"
-                    />     
-                
+                    />
+            <Entry 
+                x:Name="txtApellido" 
+                Text="{Binding Apellido}"
+                Placeholder="Escribe un apellido"
+                HorizontalOptions="FillAndExpand"
+             />
+            <Entry 
+                x:Name="txtEdad" 
+                Text="{Binding Edad}"
+                Placeholder="Escribe la edad"
+                HorizontalOptions="FillAndExpand"
+             />
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" 
+             />
+
         </VerticalStackLayout>
     </ScrollView>
 
