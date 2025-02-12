@@ -1,4 +1,5 @@
 ﻿using DAM_Leccion_KBMC.Model;
+using DAM_Leccion_KBMC.ViewModel;
 
 namespace DAM_Leccion_KBMC
 {
@@ -6,12 +7,15 @@ namespace DAM_Leccion_KBMC
     {
         int count = 0;
 
+        MainPageViewModel mainPageViewModel = new MainPageViewModel();
+
         public PersonaModel personaModel { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
-            Ejecutar();
+            BindingContext = mainPageViewModel;
+            
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -26,31 +30,15 @@ namespace DAM_Leccion_KBMC
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
-        public void Ejecutar()
-        {
-            personaModel = new PersonaModel()
-            {
-                Nombre = "Hola aqui estoy",
-            };
-            BindingContext = personaModel.Nombre;
-            //txtNombre.Text = personaModel.Nombre;
-
-            //Binding personaBinding = new Binding();
-
-            //personaBinding.Source = personaModel;//Origen
-            //personaBinding.Path = "Nombre";//Ruta
-            //txtNombre.SetBinding(Entry.TextProperty, personaBinding);//Destino Final
-
-
-
-
-        }
+        
 
         private void btnAceptar_Clicked(object sender, EventArgs e)
         {
             // DisplayAlert("Asistente del sistema","Se a guardado el reistro de la BD","Aceptar");
 
-            personaModel.Nombre = "Muñeco";
+            //personaModel.Nombre = "Alondra";
+            //personaModel.Apellido = "Montalvo";
+            //personaModel.Edad = "98";
 
         }
     }
